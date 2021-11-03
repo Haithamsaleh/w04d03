@@ -2,6 +2,8 @@ import React from 'react'
 import {Link} from "react-router-dom";
 import {IoChevronBackCircle }from 'react-icons/io5'
 import { useHistory } from "react-router-dom";
+import Search from "../Search";
+
 
 
 
@@ -23,6 +25,9 @@ function Nav() {
             </li>
             <li>
               <Link to="/cards">Cards</Link>
+            </li>
+            <li>
+              <Link to="/Fav">Fav</Link>
             </li>
           </ul>
         </nav>

@@ -1,6 +1,3 @@
-import React from 'react'
-import Search from './Search'
-
 const cars = [
     {
         id: 0,
@@ -26,17 +23,3 @@ const cars = [
 
     }
 ]
-function Cards() {
-    return (
-        <div className="c0">
-{cars.map((car)=>{
-    return <div className="c1">
-        <h1>{car.name}</h1>
-        <img className="photo" src={car.img}  alt={`img for ${car.name} `}  />
-    </div>
-})}
-        </div>
-    )
-}
-
-export default Cards;

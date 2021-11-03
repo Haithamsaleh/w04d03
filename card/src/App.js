@@ -8,6 +8,8 @@ import About from "./components/About"
 import Cards from "./components/Cards"
 import Card from "./components/Card"
 import Nav from "./components/Nav"
+import Fav from "./components/Fav"
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
      <Route exact path="/cards" component={Cards} />
      <Route exact path="/card/:id" component={Card} />
      <Route exact path="/about" component={About} />
+     <Route exact path="/Fav" component={Fav} />
      <Route path="*" render={()=>{
        return <h1>404</h1>;
      }} />

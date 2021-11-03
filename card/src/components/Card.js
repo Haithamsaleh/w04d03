@@ -1,31 +1,42 @@
 import React from 'react'
-// eslint-disable-next-line
-const cars = [
-    {
-        id: 0,
-        name: 'ford',
-        img: 'https://logos-world.net/wp-content/uploads/2021/03/Ford-Logo.png'
-    },
+import { useParams } from "react-router-dom";
+import { Cars } from "../../Cars";
+import Search from './Search';
 
-    {
-        id: 1,
-        name: 'BMw',
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/2048px-BMW_logo_%28gray%29.svg.png'
-    },
-
-    {
-        id: 2,
-        name: 'GMC',
-        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/GMC-Logo.svg/2560px-GMC-Logo.svg.png'
-    }
-]
 
 function card() {
+    const { id } = useParams();
+
+    const myItem = cities.find((car) => {
+      return car.id === parseInt(id);
+    });
+    const [favButt, sFavButt] = useState(myItem.fav);
+    const favorites = () => {
+        if (myItem.fav === true) {
+          myItem.fav = false;
+          sFavButt(false);
+        } else {
+          myItem.fav = true;
+          sFavButt(true);
+        }
+      };
+
     return (
         <div>
+              <div >
+      <div >
+        <h1>{myItem.name}</h1>
+        <img src={myItem.img} alt={`${myItem.name} car`} />
+        <button  onClick={favorites}>
+          {fButton ? "Remove From list" : "Add to thelist "}
+        </button>
+      </div>
+    </div>
+  );
+
 
         </div>
     )
 }
 
-export default card
+export default card;
